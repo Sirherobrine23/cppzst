@@ -31,9 +31,16 @@
 # Editors
 .vscode
 
+# Build
+/deps
+!/deps/zstd
+!/deps/zstd.gyp
+
 # Node Related Folders
 build
+/*.tgz
 node_modules
+/*lock*
 .yarn
 coverage
 .nyc_output

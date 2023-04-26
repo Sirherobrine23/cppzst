@@ -1,39 +1,55 @@
 {
   "name": "cppzst",
-  "version": "2.0.11",
+  "version": "2.1.0",
   "description": "Zstd wrapper for Nodejs 14 and above",
-  "main": "index.mjs",
-  "scripts": {
-    "test": "mocha -t 5000",
-    "build:dev": "node-gyp -j 16 build --debug",
-    "build": "node-gyp -j 16 build",
-    "rebuild:dev": "node-gyp -j 16 rebuild --debug",
-    "rebuild": "node-gyp -j 16 rebuild",
-    "clean": "node-gyp clean"
+  "license": "AGPL-3.0-or-later",
+  "author": "zwb-ict",
+  "type": "commonjs",
+  "types": "index.d.ts",
+  "main": "index.cjs",
+  "exports": {
+    ".": {
+      "require": "./index.cjs",
+      "import": "./index.mjs",
+      "types": "./index.d.ts"
+    }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rmw-lib/cppzst.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "zstd",
     "compression",
     "decompression"
   ],
-  "author": "zwb-ict",
   "contributors": [
     {
       "name": "gcxfd",
       "email": "i@rmw.link",
       "url": "https://github.com/gcxfd"
+    },
+    {
+      "name": "Matheus S Queiroga",
+      "email": "srherobrine20@gmail.com",
+      "url": "https://github.com/Sirherobrine23"
     }
   ],
-  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "test": "mocha -t 9000",
+    "build:dev": "node-gyp -j max build --debug",
+    "build": "node-gyp -j max build",
+    "rebuild:dev": "node-gyp -j max rebuild --debug",
+    "rebuild": "node-gyp -j max rebuild",
+    "clean": "node-gyp clean"
+  },
   "dependencies": {
     "bindings": "^1.5.0",
     "nan": "^2.17.0",
-    "nyc": "^15.1.0",
-    "segfault-handler": "^1.3.0"
+    "node-gyp": "^9.3.1"
   },
   "devDependencies": {
     "chai": "^4.3.7",
